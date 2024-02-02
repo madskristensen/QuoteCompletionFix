@@ -4,7 +4,7 @@
   "private": false,
   "identity": {
     "internalName": "QuoteCompletionFix",
-    "tags": [ "completion" ]
+    "tags": [ "completion", "quotes" ]
   },
   "assetFiles": [
 
