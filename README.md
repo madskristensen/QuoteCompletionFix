@@ -13,7 +13,7 @@ or get the [CI build][vsixgallery].
 
 > Inspired by [a popular Visual Studio feature request](https://github.com/dotnet/roslyn/issues/71898) on GitHub.
 
-Fixes the issue where typing a quote character (' or ") before or after a word, causes auto-insertion of a second quote character in C#. This is a common annoyance when typing in Visual Studio that this extension attempts to fix.
+Fixes the issue where typing a quote character (") before or after a word, causes auto-insertion of a second quote character in C#. This is a common annoyance when typing in Visual Studio that this extension attempts to fix.
 
 ## Features
 
