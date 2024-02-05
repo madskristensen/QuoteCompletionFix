@@ -17,7 +17,9 @@ namespace QuoteCompletionFix
 
         public bool ExecuteCommand(TypeCharCommandArgs args, CommandExecutionContext executionContext)
         {
-            if (args.TypedChar is not '\'' and not '"')
+            // Returning true means that further processing of the typed char should be stopped (we handled it).
+            // Returning false means that the built-in behavior should be used after this handler (we didn't handle it).
+            if (args.TypedChar is not '"')
             {
                 return false;
             }
@@ -27,29 +29,29 @@ namespace QuoteCompletionFix
             var next = position < snapshot.Length ? snapshot.GetText(position, 1)[0] : ' ';
             var prev = position > 0 ? snapshot.GetText(position - 1, 1)[0] : ' ';
 
-            // Preserve current behavior when the caret is in between two quotation marks
+            // Rule #1: Preserve current behavior when the caret is in between two quotation marks
             if (prev == args.TypedChar && next == args.TypedChar)
             {
                 return false;
             }
 
-            // If the next char is the typed char, then revert to existing behavior
+            // Rule #2: If the next char is the typed char, then revert to existing behavior
             // to support type-through (provisional text)
             if (next == args.TypedChar)
             {
                 return false;
             }
 
-            // If the next char is a letter or digit,
-            // insert the typed char and stop further processing resulting in auto-completion
+            // Rule #3: If the next char is a letter or digit,
+            // insert the typed char and stop further processing resulting in quote-completion
             if (char.IsLetterOrDigit(next))
             {
                 args.TextView.TextBuffer.Insert(position, args.TypedChar.ToString());
                 return true;
             }
 
-            // If the next char is a letter or digit or a $ or @,
-            // insert the typed char and stop further processing resulting in auto-completion
+            // Rule #4: If the next char is a letter or digit or a $ or @,
+            // insert the typed char and stop further processing resulting in quote-completion
             if (char.IsLetterOrDigit(prev) || prev is '$' or '@')
             {
                 args.TextView.TextBuffer.Insert(position, "" + args.TypedChar + args.TypedChar);
