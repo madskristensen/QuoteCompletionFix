@@ -8,11 +8,11 @@ namespace QuoteCompletionFix
     internal sealed partial class Vsix
     {
         public const string Id = "QuoteCompletionFix.7f3cb70e-73d1-4f29-84dd-5c436e3ccffb";
-        public const string Name = "Quote Completion Fix";
-        public const string Description = @"Modifies the auto-completion behavior of quotation marks to avoid false positives.Modifies the ";
+        public const string Name = "Better Quotes";
+        public const string Description = @"Fixes the issue where typing a quote character (") before or after a word, causes auto-insertion of a second quote character in C#. This is a common annoyance when typing in Visual Studio that this extension attempts to fix.";
         public const string Language = "en-US";
         public const string Version = "1.0";
         public const string Author = "Mads Kristensen";
-        public const string Tags = "";
+        public const string Tags = "quote, editor, completion";
     }
 }

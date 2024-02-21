@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.Composition;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.Commanding;
 using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Editor;
@@ -15,6 +16,7 @@ namespace QuoteCompletionFix
     internal class TypingCommandHandler : ICommandHandler<TypeCharCommandArgs>
     {
         public string DisplayName => nameof(TypingCommandHandler);
+        private static RatingPrompt _rating;
 
         [Import]
         public IEditorOperationsFactoryService EditorOperationsFactory { get; set; }
@@ -57,6 +59,7 @@ namespace QuoteCompletionFix
             if (char.IsLetterOrDigit(next) || char.IsLetterOrDigit(prev))
             {
                 args.TextView.TextBuffer.Insert(position, args.TypedChar.ToString());
+                RegisterUseAsync().FireAndForget();
                 return true;
             }
 
@@ -66,10 +69,17 @@ namespace QuoteCompletionFix
                 args.TextView.TextBuffer.Insert(position, "" + args.TypedChar);
                 EditorOperationsFactory.GetEditorOperations(args.TextView).InsertProvisionalText("\"");
                 args.TextView.Caret.MoveToPreviousCaretPosition();
+                RegisterUseAsync().FireAndForget();
                 return true;
             }
 
             return false; // No rules applied from this command handler. Pass through to built-in command handlers
+        }
+
+        private static async Task RegisterUseAsync()
+        {
+            _rating ??= new("MadsKristensen.QuoteCompletionFix", Vsix.Name, await General.GetLiveInstanceAsync());
+            _rating.RegisterSuccessfulUsage();
         }
 
         public CommandState GetCommandState(TypeCharCommandArgs args)

@@ -7,7 +7,22 @@
     "tags": [ "completion", "quotes" ]
   },
   "assetFiles": [
-
+    {
+      "pathOnDisk": "art/quote-before.gif",
+      "targetPath": "art/quote-before.gif"
+    },
+    {
+      "pathOnDisk": "art/quote-after.gif",
+      "targetPath": "art/quote-after.gif"
+    },
+    {
+      "pathOnDisk": "art/quote-dollar-before.gif",
+      "targetPath": "art/quote-dollar-before.gif"
+    },
+    {
+      "pathOnDisk": "art/quote-dollar-after.gif",
+      "targetPath": "art/quote-dollar-after.gif"
+    }
   ],
   "overview": "README.md",
   "publisher": "MadsKristensen",
