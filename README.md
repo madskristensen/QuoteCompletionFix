@@ -2,7 +2,7 @@
 [vsixgallery]: http://vsixgallery.com/extension/QuoteCompletionFix.7f3cb70e-73d1-4f29-84dd-5c436e3ccffb/
 [repo]:https://github.com/madskristensen/QuoteCompletionFix
 
-# Qupte Completion Fix for C# in Visual Studio
+# Better Quotes for C# in Visual Studio
 
 [![Build](https://github.com/madskristensen/QuoteCompletionFix/actions/workflows/build.yaml/badge.svg)](https://github.com/madskristensen/QuoteCompletionFix/actions/workflows/build.yaml)
 
