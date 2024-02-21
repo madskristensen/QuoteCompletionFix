@@ -3,7 +3,7 @@
   <Metadata>
     <Identity Id="QuoteCompletionFix.7f3cb70e-73d1-4f29-84dd-5c436e3ccffb" Version="1.0" Language="en-US" Publisher="Mads Kristensen" />
     <DisplayName>Better Quotes</DisplayName>
-    <Description xml:space="preserve">Fixes the issue where typing a quote character (") before or after a word, causes auto-insertion of a second quote character in C#. This is a common annoyance when typing in Visual Studio that this extension attempts to fix.</Description>
+    <Description xml:space="preserve">Fixes the issue where typing a quote character before or after a word, causes auto-insertion of a second quote character in C#. This is a common nuisance when typing in Visual Studio that this extension attempts to fix.</Description>
     <MoreInfo>https://github.com/madskristensen/QuoteCompletionFix/</MoreInfo>
     <License>Resources\LICENSE.txt</License>
     <Icon>Resources\Icon.png</Icon>
