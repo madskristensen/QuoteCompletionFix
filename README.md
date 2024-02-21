@@ -23,7 +23,7 @@ This is a potential fix.
 * Adds quote completion after $ and @ characters
 
 ### Less intrusive
-In some scenarios, the auto-completion triggers when there is no need for a closing quote. Consider the case when the caret is next to an alphanumeric character when you type a quote   .
+In some scenarios, the auto-completion triggers when there is no need for a closing quote. Consider the case when the caret is next to an alphanumeric character when you type a quote.
 
 ![Less intrusive](art/quote-before.gif)
  
