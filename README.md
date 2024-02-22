@@ -42,7 +42,9 @@ As you can see below, Visual Studio doesn’t auto-insert the closing quote, whi
  
 But with a simple tweak to the quote completion rules, we can make that happen  .
 
-![Less intrusive](art/quote-dollar-after.gif)   
+![Less intrusive](art/quote-dollar-after.gif)
+
+The C# code for these rules can be found in the [TypingCommandHandler.cs](https://github.com/madskristensen/QuoteCompletionFix/blob/master/src/TypingCommandHandler.cs#L26) file in the [GitHub repo][repo].
 
 ## How can I help?
 If you enjoy using the extension, please give it a ★★★★★ rating on the [Visual Studio Marketplace][marketplace].
